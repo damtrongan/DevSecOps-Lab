@@ -64,6 +64,10 @@
     docker stop <containerid>
     docker rmi -f netflix
     ```
+/// Run on local 
+docker build --build-arg TMDB_V3_API_KEY=<> -t netflix .
+
+```
 
 It will show an error cause you need API key
 
@@ -92,7 +96,6 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
         docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
         ```
         
-        
         To access: 
         
         publicIP:9000 (by default username & password is admin)
@@ -109,6 +112,9 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
         to scan image using trivy
         ```
         trivy image <imageid>
+        
+        // scan in project folder
+        trivy fs . 
         ```
         
         
